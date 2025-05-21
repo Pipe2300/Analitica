@@ -122,6 +122,12 @@ elif page == "Modelado":
     else:
         # Selección de variables numéricas para clustering
         features = df_clean.select_dtypes(include=np.number).drop(columns=['PRICE'], errors='ignore')
+
+        # 🔧 Validación final: eliminar filas con nulos si aún hay
+        if features.isnull().values.any():
+            st.warning("⚠️ Se encontraron valores nulos residuales en las variables numéricas. Serán eliminados para el clustering.")
+            features = features.dropna()
+
         n_clusters = st.slider("Número de clusters", 2, 10, 4)
         kmeans = KMeans(n_clusters=n_clusters, random_state=42)
         clusters = kmeans.fit_predict(features)
