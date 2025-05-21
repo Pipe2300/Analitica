@@ -114,7 +114,7 @@ elif page == "Análisis":
         st.pyplot(fig2)
         st.markdown("*Estas visualizaciones ayudan a identificar patrones y relaciones clave para comprender los datos.*")
 
-# Modelado sobre los datos
+# Modelado sobre los datos 1
 elif page == "Modelado":
     st.header("🤖 Modelado: Clustering con KMeans")
     if df_clean is None:
