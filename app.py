@@ -76,7 +76,7 @@ else:
 page = st.sidebar.radio("Sección", ["Inicio", "Limpieza", "Análisis", "Modelado", "Acerca de"])
 
 # Inicio
-en if page == "Inicio":
+if page == "Inicio":
     st.title("🏠 Explorador de Viviendas")
     st.write("Carga tus datos y navega por las diferentes etapas: limpieza, análisis y modelado.")
 
