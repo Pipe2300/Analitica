@@ -103,10 +103,18 @@ elif page == "Análisis":
     else:
         st.subheader("Estadísticas Descriptivas")
         st.write(df_clean.describe())
+        #st.subheader("Distribución de Precio")
+        #fig1, ax1 = plt.subplots()
+        #sns.histplot(df_clean['PRICE'], kde=True, ax=ax1)
+        #st.pyplot(fig1)
         st.subheader("Distribución de Precio")
-        fig1, ax1 = plt.subplots()
-        sns.histplot(df_clean['PRICE'], kde=True, ax=ax1)
-        st.pyplot(fig1)
+        if 'PRICE' in df_clean.columns:
+            fig1, ax1 = plt.subplots()
+            sns.histplot(df_clean['PRICE'], kde=True, ax=ax1)
+            st.pyplot(fig1)
+        else:
+            st.warning("La columna 'PRICE' no se encuentra en los datos. No se puede graficar la distribución de precios.")
+        
         st.subheader("Matriz de Correlación")
         corr = df_clean.corr()
         fig2, ax2 = plt.subplots(figsize=(8, 6))
