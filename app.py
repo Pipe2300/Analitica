@@ -1,9 +1,3 @@
-"""
-APLICACIÓN STREAMLIT PARA DESPLIEGUE DEL MODELO DE PRECIOS DE VIVIENDAS
-Esta aplicación permite a los usuarios interactuar con el modelo para predecir precios de viviendas
-y visualizar el análisis exploratorio de datos.
-"""
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -76,7 +70,7 @@ else:
 page = st.sidebar.radio("Sección", ["Inicio", "Limpieza", "Análisis", "Modelado", "Acerca de"])
 
 # Inicio
-if page == "Inicio":
+en if page == "Inicio":
     st.title("🏠 Explorador de Viviendas")
     st.write("Carga tus datos y navega por las diferentes etapas: limpieza, análisis y modelado.")
 
@@ -114,7 +108,7 @@ elif page == "Análisis":
         st.pyplot(fig2)
         st.markdown("*Estas visualizaciones ayudan a identificar patrones y relaciones clave para comprender los datos.*")
 
-# Modelado sobre los datos 1
+# Modelado sobre los datos
 elif page == "Modelado":
     st.header("🤖 Modelado: Clustering con KMeans")
     if df_clean is None:
